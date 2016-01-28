@@ -93,7 +93,7 @@ The simple shooting mechanism will be triggered whenever a player touches the sc
 >        }
 >        
 >        // called on every touch in this scene
->        - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+>        - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
 >            [self launchPenguin];
 >        }
 >        

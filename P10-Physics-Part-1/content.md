@@ -158,7 +158,7 @@ We are going to **replace** the complete *touchBegan* implementation.
 > [action]
 > Replace the old `touchBegan` with the one below:
 >
->        -(void) touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+>        -(void) touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 >        {
 >            CGPoint touchLocation = [touch locationInNode:_contentNode];
 >        
@@ -182,7 +182,7 @@ Whenever a touch moves, we need to update the position of the mouseJointNode, so
 > [action]
 > Add `touchMoved`:
 >
->        - (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+>        - (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 >        {
 >            // whenever touches move, update the position of the mouseJointNode to the touch position
 >            CGPoint touchLocation = [touch locationInNode:_contentNode];
@@ -210,13 +210,13 @@ Now we are going to call this method from the *touchEnded* and *touchCancelled* 
 > [action]
 > Add `touchEnded` and `touchCancelled`:
 >
->        -(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+>        -(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 >        {
 >            // when touches end, meaning the user releases their finger, release the catapult
 >            [self releaseCatapult];
 >        }
 >        
->        -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
+>        -(void) touchCancelled:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 >        {
 >            // when touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
 >            [self releaseCatapult];
